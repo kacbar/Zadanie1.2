@@ -14,6 +14,15 @@ public static class Statistics
             return numbers.Average();
         }
     }
+    
+    public static int CalculateMaxValue(int[] numbers)
+    {
+        if (numbers == null || numbers.Length == 0)
+        {
+            return 0;
+        }
+        return numbers.Max();
+    }
 }
 class Program
 {
@@ -22,5 +31,8 @@ class Program
         int[] numbers = { 1, 2, 3, 4, 5 };
         double average = Statistics.CalculateAverage(numbers);
         Console.WriteLine("Średnia wynosi: " + average);
+
+        double max = Statistics.CalculateMaxValue(numbers);
+        Console.WriteLine("Maksymalna wartośc wynosi: " + max);
     }
 }
