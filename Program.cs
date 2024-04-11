@@ -3,16 +3,12 @@ using System.Linq;
 
 public static class Statistics
 {
-    public static double CalculateAverage(int[] numbers)
-    {
-        if (numbers == null || numbers.Length == 0)
-        {
-            return 0;
+    public static double CalculateAverage(int[] numbers) {
+        double sum = 0;
+        foreach (int item in numbers) {
+            sum += item;
         }
-        else
-        {
-            return numbers.Average();
-        }
+        return numbers.Length > 0 ? sum / numbers.Length : 0;
     }
     
     public static int CalculateMaxValue(int[] numbers)
